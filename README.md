@@ -41,7 +41,15 @@ R_0 &= 0.0
 
 ### Built With
 
+- [R version 4.2.1 (2022-06-23)](https://cran.r-project.org/bin/macosx/)
+- [`{renv}`](https://rstudio.github.io/renv/articles/renv.html) for package management
+
 ### Getting Started
+
+I've used the `{renv}` package to manage the R environment for this project.
+For more details on how to use `{renv}`, see [this article](https://rstudio.github.io/renv/articles/renv.html), but in brief, it creates a snapshot of the installed packages and their versions.
+
+To get started, you will need to install `{renv}` as usual (i.e., `install.packages("renv")`), and then run `renv::restore()` to install the packages that are used in this project (the record in the ***renv.lock*** file).
 
 ### Usage
 
