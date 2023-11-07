@@ -50,3 +50,23 @@ theme_set(theme_minimal())
     + geom_line(size=2)
     + labs(x='Time', y='Number', color='State')
 )
+
+# Candidate values for R0 and beta
+R0 = np.linspace(0.1, 5, 50)
+betas = R0 * 1 / 2
+
+solve_ivp(
+    sirmod, [tmin, 1e5], start, args=parms
+).y[2, -1]
+
+final_size_df = pd.DataFrame({"R0": R0, "final_size": np.zeros(len(R0))})
+
+for (index, beta) in enumerate(betas):
+    p = (beta, mu, gamma, N)
+    final_size_df.final_size[index] = solve_ivp(sirmod, [tmin, 1e5], start, args=p).y[2, -1]
+
+(
+    ggplot(final_size_df, aes(x='R0', y='final_size'))
+    + geom_line(size=2)
+    + labs(x='R0', y='Final size')
+)
