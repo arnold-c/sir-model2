@@ -43,7 +43,8 @@ R_0 &= 0.0
 
 - [R version 4.2.1 (2022-06-23)](https://cran.r-project.org/bin/macosx/)
 - [`{renv}`](https://rstudio.github.io/renv/articles/renv.html) for package management
-
+- [`{deSolve}`](https://cran.r-project.org/web/packages/deSolve/index.html) for solving differential equations
+  
 ### Getting Started
 
 I've used the `{renv}` package to manage the R environment for this project.
